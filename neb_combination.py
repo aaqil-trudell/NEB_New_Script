@@ -5,6 +5,7 @@ import pandas as pd
 from settings import main
 from settings import fmt_hz
 from settings import default_settings
+from datetime import datetime
 
 # Specify the correct paths
 Scope_path = r"C:\Users\aaqil.murji\OneDrive - TRUDELL MEDICAL LIMITED\Desktop\NEB Script\Scope"
@@ -57,7 +58,7 @@ while True:
 
         # Prepare the output data structure
         output_data = [["ES_Number", ES_number],
-                       ["Scope Frequency"], ["Scope Phase"], ["Scope Z_r"], ["Scope Power"],
+                       ["Scope Frequency"], ["Scope Phase"], ["Scope Z"], ["Scope Power"],
                        ["Logger Neb Efficiency"], ["Logger Neb Freq"], ["Logger Neb Phase"],
                        ["Logger Neb Voltage"], ["Logger Neb Current"], ["Logger Neb Impedance"],
                        ["Logger Neb Power"], ["VNA_Fs"], ["VNA_Fr"], ["VNA_k_squared"], ["VNA_Z_r"],
@@ -196,7 +197,7 @@ while True:
         output_df = output_df[1:]
 
         # Save the final CSV
-        output_file = f"combined_{ES_number}.csv"
+        output_file = datetime.today().strftime('%Y-%m-%d_%H-%M') + "_combined.csv"
         output_df.to_csv(output_file, index=False)
         print(f"Big CSV created: {output_file}")
         break
