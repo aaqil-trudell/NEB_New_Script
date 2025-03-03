@@ -2,6 +2,8 @@ import math
 import json
 from matplotlib.ticker import EngFormatter
 
+global fmt_hz
+
 fmt_hz = EngFormatter(unit='Hz')
 
 default_settings = {
@@ -12,12 +14,6 @@ default_settings = {
 }
 
 filename = "vmf_config.json"
-
-# Global variables
-SEARCHBAND_SCALE = None
-PEAK_THRESHOLD = None
-SHOW_PLOTS = None
-CUSTOM_FREQ = None
 
 
 def load_settings():

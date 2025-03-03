@@ -1,0 +1,6 @@
+{
+    "searchband_scale": 10.0,
+    "peak_threshold": 0.5,
+    "show_plots": false,
+    "custom_freq": null
+}
