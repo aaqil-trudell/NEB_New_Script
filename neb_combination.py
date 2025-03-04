@@ -57,12 +57,15 @@ while True:
             print(f"{key}: {file}")
 
         # Prepare the output data structure
-        output_data = [["ES_Number", ES_number],
-                       ["Scope Frequency"], ["Scope Phase"], ["Scope Z"], ["Scope Power"],
-                       ["Logger Neb Efficiency"], ["Logger Neb Freq"], ["Logger Neb Phase"],
-                       ["Logger Neb Voltage"], ["Logger Neb Current"], ["Logger Neb Impedance"],
-                       ["Logger Neb Power"], ["VNA_Fs"], ["VNA_Fr"], ["VNA_k_squared"], ["VNA_Z_r"],
-                       ["VNA_Z_s"]]
+        output_data = [
+            ["ES_Number", ES_number],
+            ["Scope File", os.path.basename(selected_files["Scope"])],
+            ["Scope Frequency"], ["Scope Phase"], ["Scope Z"], ["Scope Power"],
+            ["Logger File", os.path.basename(selected_files["Logger"])],
+            ["Logger Neb Efficiency"], ["Logger Neb Freq"], ["Logger Neb Phase"], 
+            ["Logger Neb Voltage"], ["Logger Neb Current"], ["Logger Neb Impedance"],
+            ["Logger Neb Power"], ["VNA File", os.path.basename(selected_files["VNA"])],
+            ["VNA_Fs"], ["VNA_Fr"], ["VNA_k_squared"], ["VNA_Z_r"], ["VNA_Z_s"]]
 
         # Extract Scope CSV data
         with open(selected_files["Scope"], 'r') as f:
@@ -74,10 +77,10 @@ while True:
                 D4 = float(rows[3][3])
                 C4 = float(rows[3][2])
                 Z_r1 = ((C4 / (2 * (2 ** 0.5))) ** 2) / D4
-                output_data[1].append(B4)
-                output_data[2].append(G4)
-                output_data[3].append(Z_r1)
-                output_data[4].append(D4)
+                output_data[2].append(B4)
+                output_data[3].append(G4)
+                output_data[4].append(Z_r1)
+                output_data[5].append(D4)
             else:
                 print(f"File {selected_files['Scope']} does not have sufficient data.")
 
@@ -93,13 +96,13 @@ while True:
                 D6 = float(rows[5][3])
                 D7 = float(rows[6][3])
                 D8 = float(rows[7][3])
-                output_data[5].append(D2)
-                output_data[6].append(D3)
-                output_data[7].append(D4)
-                output_data[8].append(D5)
-                output_data[9].append(D6)
-                output_data[10].append(D7)
-                output_data[11].append(D8)
+                output_data[7].append(D2)
+                output_data[8].append(D3)
+                output_data[9].append(D4)
+                output_data[10].append(D5)
+                output_data[11].append(D6)
+                output_data[12].append(D7)
+                output_data[13].append(D8)
             else:
                 print(f"File {selected_files['Logger']} does not have sufficient data.")
 
@@ -185,11 +188,11 @@ while True:
             phase_r = phase.loc[Fr_index]
             Z_s = Z_chopped[Fs_index]
 
-        output_data[12].append(Fs)
-        output_data[13].append(Fr)
-        output_data[14].append(k_squared)
-        output_data[15].append(Z_r)
-        output_data[16].append(Z_s)
+        output_data[15].append(Fs/1000)
+        output_data[16].append(Fr/1000)
+        output_data[17].append(k_squared)
+        output_data[18].append(Z_r)
+        output_data[19].append(Z_s)
 
         # Convert to DataFrame and save
         output_df = pd.DataFrame(output_data)
