@@ -1,0 +1,20 @@
+ES_Number,0012
+Scope File,0012-Measure--4-1um-1-wet--00001.csv
+Scope Frequency,104.5779
+Scope Phase,-6.805
+Scope Z,229.07297737956563
+Scope Power,1.08171
+Logger File,0012--nebvi_plugged.csv
+Logger Neb Efficiency,72.9
+Logger Neb Freq,108.1
+Logger Neb Phase,1.5
+Logger Neb Voltage,19.6
+Logger Neb Current,102.8
+Logger Neb Impedance,190.5
+Logger Neb Power,2.01
+VNA File,0012-dry.csv
+VNA_Fs,107.84
+VNA_Fr,107.48
+VNA_k_squared,0.042024896898855024
+VNA_Z_r,190.53767005902
+VNA_Z_s,220.6984184822597

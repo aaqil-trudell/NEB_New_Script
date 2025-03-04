@@ -8,9 +8,9 @@ from settings import default_settings
 from datetime import datetime
 
 # Specify the correct paths
-Scope_path = r"C:\Users\aaqil.murji\OneDrive - TRUDELL MEDICAL LIMITED\Desktop\NEB Script\Scope"
-logger_path = r"C:\Users\aaqil.murji\OneDrive - TRUDELL MEDICAL LIMITED\Desktop\NEB Script\UClogger"
-VNA_path = r"C:\Users\aaqil.murji\OneDrive - TRUDELL MEDICAL LIMITED\Desktop\NEB Script\VNA"
+Scope_path = r"G:\R&D\MechProdDev\Projects\Concept Development\2306 NT2\Testing\Electrical\Oscilliscope"
+logger_path = r"G:\R&D\MechProdDev\Projects\Concept Development\2306 NT2\Testing\Electrical\UClogger"
+VNA_path = r"G:\R&D\MechProdDev\Projects\Concept Development\2306 NT2\Testing\Electrical\VNA"
 
 # Calling the main function from settings which reads values from the JSON file
 SEARCHBAND_SCALE = main()
